@@ -8,5 +8,12 @@ namespace LemonadeStand
 {
     class Customer
     {
+
+        private int ThirstLevel;
+        private int LikelihoodToBuy;
+        //private int GetLikelihoodToBuy(int Lemonade.Price, bool weather.IsRaining, bool weather.IsHumid, )
+        //{
+            
+        //}
     }
 }

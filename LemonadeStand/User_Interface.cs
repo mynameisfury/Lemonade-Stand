@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class User_Interface
+        static class User_Interface
     {
+        public static string MenuMessage;
+        //public static string UserInput;
+        public static void DisplayMessage()
+        {
+            Console.WriteLine(MenuMessage);
+        }
+        //public static void GetUserInput()
+        //{
+        //    Console.ReadLine();
+        //}
     }
 }

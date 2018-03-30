@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Item
+    class Lemonade
     {
-        private enum Items
-        {
-            Lemons,
-            Ice,
-            Cups,
-            Sugar
-
-                
-        }
         private int price;
+        private int quality;
 
+
+
+        //private int GetQuality(int Lemons, int Sugar, int Ice)
+        //{
+
+        //}
     }
 }
