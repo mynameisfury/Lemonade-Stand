@@ -11,9 +11,10 @@ namespace LemonadeStand
 
         private int ThirstLevel;
         private int LikelihoodToBuy;
-        //private int GetLikelihoodToBuy(int Lemonade.Price, bool weather.IsRaining, bool weather.IsHumid, )
-        //{
-            
-        //}
+        private int GetLikelihoodToBuy(Random rng)
+        {
+            int result = rng.Next(1, 101);
+            return result;
+        }
     }
 }

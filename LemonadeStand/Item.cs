@@ -6,17 +6,9 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Item
+    abstract class Item
     {
-        private enum Items
-        {
-            Lemons,
-            Ice,
-            Cups,
-            Sugar
-
-                
-        }
+        
         private int price;
 
     }

@@ -14,9 +14,9 @@ namespace LemonadeStand
         {
             Console.WriteLine(MenuMessage);
         }
-        //public static void GetUserInput()
-        //{
-        //    Console.ReadLine();
-        //}
+        public static void GetUserInput()
+        {
+            Console.ReadLine();
+        }
     }
 }

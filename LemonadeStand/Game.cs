@@ -8,16 +8,17 @@ namespace LemonadeStand
 {
     class Game
     {
-        Item item = new Item();
+        //Item item = new Item();
         Random rng = new Random();
         Day day = new Day();
+        Player player = new Player();
 
         public void RunGame()
         {
-            User_Interface.MenuMessage = "";
-            User_Interface.DisplayMessage();
             day.weather.DetermineRain(rng);
             day.weather.DetermineTemperature(rng);
+            player.BuyItems();
+            player.inventory.DisplayItems();
             Console.ReadKey();
         }
     }

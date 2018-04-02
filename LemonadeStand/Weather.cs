@@ -15,7 +15,7 @@ namespace LemonadeStand
             CLOUDY,
             SUNNY,
             PARTLYCLOUDY
-
+            
         }
 
         public Weather()
@@ -60,7 +60,11 @@ namespace LemonadeStand
         }
         public int DetermineTemperature(Random rng)
         {
-            return rng.Next(60, 100);
+
+            int result = rng.Next(60, 100);
+            User_Interface.MenuMessage = result.ToString() + " Degrees";
+            User_Interface.DisplayMessage();
+            return result;
 
         }
 

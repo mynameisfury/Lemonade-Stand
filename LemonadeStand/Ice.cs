@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Day
+    class Ice : Item
     {
-        public Weather weather = new Weather();
-        private int NumberOfCustomers;
-
-
-
+        private double price = .01;
     }
 }
