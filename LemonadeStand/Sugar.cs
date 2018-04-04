@@ -8,6 +8,6 @@ namespace LemonadeStand
 {
     class Sugar : Item
     {
-        private double price = .1;
+        public static double price = .1;
     }
 }

@@ -19,6 +19,10 @@ namespace LemonadeStand
             day.weather.DetermineTemperature(rng);
             player.BuyItems();
             player.inventory.DisplayItems();
+            Console.WriteLine(player.money + "$");
+            player.SetRecipe();
+            
+            //player.DisplayQuality();
             Console.ReadKey();
         }
     }

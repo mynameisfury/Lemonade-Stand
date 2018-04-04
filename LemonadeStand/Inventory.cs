@@ -13,10 +13,10 @@ namespace LemonadeStand
         Ice ice = new Ice();
         Sugar sugar = new Sugar();
         Cup cup = new Cup();
-        List<Item> numberOfLemons = new List<Item>();
-        List<Item> numberOfSugar = new List<Item>();
-        List<Item> numberOfCups = new List<Item>();
-        List<Item> numberOfIceCubes = new List<Item>();
+        public List<Item> numberOfLemons = new List<Item>();
+        public List<Item> numberOfSugar = new List<Item>();
+        public List<Item> numberOfCups = new List<Item>();
+        public List<Item> numberOfIceCubes = new List<Item>();
 
         //public int NumberToAdd;
         //public Item itemsToAdd;
@@ -53,6 +53,34 @@ namespace LemonadeStand
             for (int i = 0; i < NumberToAdd; i++)
             {
                 numberOfSugar.Add(sugar);
+            }
+        }
+        public void RemoveSugar(int NumberToRemove)
+        {
+            for (int i = 0; i < NumberToRemove; i++)
+            {
+                numberOfSugar.Remove(sugar);
+            }
+        }
+        public void RemoveIce(int NumberToRemove)
+        {
+            for (int i = 0; i < NumberToRemove; i++)
+            {
+                numberOfIceCubes.Remove(ice);
+            }
+        }
+        public void RemoveLemons(int NumberToRemove)
+        {
+            for (int i = 0; i < NumberToRemove; i++)
+            {
+                numberOfLemons.Remove(lemon);
+            }
+        }
+        public void RemoveCup(int NumberToRemove)
+        {
+            for (int i = 0; i < NumberToRemove; i++)
+            {
+                numberOfCups.Remove(cup);
             }
         }
         public void DisplayItems()

@@ -16,5 +16,8 @@ namespace LemonadeStand
             int result = rng.Next(1, 101);
             return result;
         }
+
+        //Lemonade.GetQuality(Player.SetLemons(), Player.SetSugar()
+
     }
 }

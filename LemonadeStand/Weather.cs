@@ -8,8 +8,8 @@ namespace LemonadeStand
 {
     class Weather
     {
-        private bool IsRaining;
-        private bool IsHumid;
+        public bool IsRaining;
+        public bool IsHumid;
         private enum SkyStates
         {
             CLOUDY,
