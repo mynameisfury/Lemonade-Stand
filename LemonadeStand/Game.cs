@@ -8,22 +8,11 @@ namespace LemonadeStand
 {
     class Game
     {
-        //Item item = new Item();
-        Random rng = new Random();
-        Day day = new Day();
-        Player player = new Player();
-
         public void RunGame()
         {
-            day.weather.DetermineRain(rng);
-            day.weather.DetermineTemperature(rng);
-            player.BuyItems();
-            player.inventory.DisplayItems();
-            Console.WriteLine(player.money + "$");
-            player.SetRecipe();
-            
-            //player.DisplayQuality();
-            Console.ReadKey();
+            Day day = new Day();
+            day.RunDays();
         }
+
     }
 }

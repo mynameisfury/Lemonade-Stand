@@ -26,6 +26,7 @@ namespace LemonadeStand
                     User_Interface.DisplayMessage();                    
                     inventory.AddLemons(Convert.ToInt32(Console.ReadLine()));
                     money -= (Lemon.price * inventory.numberOfLemons.Count);
+                    DisplayMoney();
                     BuyItems();
                     break;
                 case "cups":
@@ -33,6 +34,7 @@ namespace LemonadeStand
                     User_Interface.DisplayMessage();                    
                     inventory.AddCups(Convert.ToInt32(Console.ReadLine()));
                     money -= (Cup.price * inventory.numberOfCups.Count);
+                    DisplayMoney();
                     BuyItems();
                     break;
                 case "ice":
@@ -40,6 +42,7 @@ namespace LemonadeStand
                     User_Interface.DisplayMessage();
                     inventory.AddIce(Convert.ToInt32(Console.ReadLine()));
                     money -= (Ice.price * inventory.numberOfIceCubes.Count);
+                    DisplayMoney();
                     BuyItems();
                     break;
                 case "sugar":
@@ -47,6 +50,7 @@ namespace LemonadeStand
                     User_Interface.DisplayMessage();
                     inventory.AddSugar(Convert.ToInt32(Console.ReadLine()));
                     money -= (Sugar.price * inventory.numberOfSugar.Count);
+                    DisplayMoney();
                     BuyItems();
                     break;
                 case "finish":
@@ -65,40 +69,86 @@ namespace LemonadeStand
         
         public void SetRecipe()
         {
-            SetLemons();
-            SetIce();
-            SetSugar();
+            Lemonade.numberOfLemons = SetLemons();
+            Lemonade.numberOfSugar = SetIce();
+            Lemonade.numberOfIce = SetSugar();
+            Lemonade.price = SetPricePerCup();
         }
         //Lemonade lemonade = new Lemonade();
-        //public void DisplayQuality()
-        //{
-        //    Console.WriteLine(lemonade.quality);
-        //}
+        public void DisplayQuality()
+        {
+            Console.WriteLine(Lemonade.quality);
+        }
 
         public static int SetLemons()
         {
-            User_Interface.MenuMessage = "How many lemons in a pitcher?";
-            User_Interface.DisplayMessage();
-            return Convert.ToInt32(Console.ReadLine());
-
+            try
+            {
+                User_Interface.MenuMessage = "How many lemons in a pitcher?";
+                User_Interface.DisplayMessage();
+                return Convert.ToInt32(Console.ReadLine());
+            }
+            catch (System.FormatException)
+            {
+                User_Interface.MenuMessage = "Invalid input.";
+                User_Interface.DisplayMessage();
+                
+                SetLemons();
+                return 0;
+            }
         }
 
         public static int SetSugar()
         {
-            User_Interface.MenuMessage = "How many cups of sugar in a pitcher?";
-            User_Interface.DisplayMessage();
-            return Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                User_Interface.MenuMessage = "How many cups of sugar in a pitcher?";
+                User_Interface.DisplayMessage();
+                return Convert.ToInt32(Console.ReadLine());
+            }
+            catch (System.FormatException)
+            {
+                User_Interface.MenuMessage = "Invalid input.";
+                User_Interface.DisplayMessage();
 
+                SetSugar();
+                return 0;
+
+            }
         }
         public static int SetIce()
         {
-            User_Interface.MenuMessage = "How many ice cubes in a cup?";
-            User_Interface.DisplayMessage();
-            return Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                User_Interface.MenuMessage = "How many ice cubes in a cup?";
+                User_Interface.DisplayMessage();
+                return Convert.ToInt32(Console.ReadLine());
+            }
+            catch (System.FormatException)
+            {
+                User_Interface.MenuMessage = "Invalid input.";
+                User_Interface.DisplayMessage();
 
+                SetIce();
+                return 0;
+
+            }
+        }
+        public void DisplayMoney()
+        {
+            Console.WriteLine("You have $" + money);
+        }
+        public static double SetPricePerCup()
+        {
+            User_Interface.MenuMessage = "In cents, how much per cup will you charge?";
+            User_Interface.DisplayMessage();
+            return Convert.ToDouble(Console.ReadLine());
         }
 
-
-
+        public int GetQuality(int numberOfLemons, int numberOfSugar)
+        {
+            Lemonade.quality = Lemonade.numberOfLemons * Lemonade.numberOfSugar;
+            return Lemonade.quality;
+        }
     }
 }

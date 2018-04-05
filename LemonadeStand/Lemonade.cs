@@ -8,23 +8,19 @@ namespace LemonadeStand
 {
     class Lemonade
     {
-        private int price;
-        public int quality;
-        public int numberOfLemons = Player.SetLemons();
-        public int numberOfSugar = Player.SetSugar();
-        public int numberOfIce = Player.SetIce();
+        public static double price;
+        public static int quality;
+        public static int numberOfLemons;
+        public static int numberOfSugar;
+        public static int numberOfIce;
 
-        public void AddLemonsToPitcher(int numberToAdd)
-        {
+        //public void AddLemonsToPitcher(int numberToAdd)
+        //{
 
-        }
+        //}
         
 
         
-        public static int GetQuality(int numberOfLemons, int numberOfSugar)
-        {
-            int result = numberOfLemons * numberOfSugar;
-            return result;
-        }
+        
     }
 }

@@ -10,6 +10,7 @@ namespace LemonadeStand
     {
         public bool IsRaining;
         public bool IsHumid;
+        
         private enum SkyStates
         {
             CLOUDY,
@@ -18,40 +19,41 @@ namespace LemonadeStand
             
         }
 
-        public Weather()
-        {
-                
-        }
+        
 
-        public void DetermineRain(Random rng)
+        public bool DetermineRain(Random rng)
         {
             if (rng.Next(0, 1) == 1)
             {
                 bool IsRaining = true;
+                return true;
                 User_Interface.MenuMessage = "It is raining";
                 User_Interface.DisplayMessage();
             }
             else
             {
                 bool IsRaining = false;
+                return false;
                 User_Interface.MenuMessage = "It's clear";
                 User_Interface.DisplayMessage();
             }
 
         }
-        public void DetermineHumid(Random rng)
+        public bool DetermineHumid(Random rng)
         {
 
         
             if (rng.Next(0, 1) == 1)
             {
                 bool IsHumid = true;
+                return true;
                 User_Interface.MenuMessage = "It is humid";
                 User_Interface.DisplayMessage();
             }
             else
             {
                 bool IsHumid = false;
+                return false;
                 User_Interface.MenuMessage = "It's not humid";
                 User_Interface.DisplayMessage();
             }
@@ -62,8 +64,7 @@ namespace LemonadeStand
         {
 
             int result = rng.Next(60, 100);
-            User_Interface.MenuMessage = result.ToString() + " Degrees";
-            User_Interface.DisplayMessage();
+            
             return result;
 
         }

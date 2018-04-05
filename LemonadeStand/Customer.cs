@@ -8,16 +8,17 @@ namespace LemonadeStand
 {
     class Customer
     {
-
-        private int ThirstLevel;
-        private int LikelihoodToBuy;
-        private int GetLikelihoodToBuy(Random rng)
+        
+        
+        //private int LikelihoodToBuy = GetLikelihoodToBuy();
+        public static int GetLikelihoodToBuy(Random rng)
         {
             int result = rng.Next(1, 101);
             return result;
         }
+        
+        
 
-        //Lemonade.GetQuality(Player.SetLemons(), Player.SetSugar()
 
     }
 }
