@@ -136,13 +136,13 @@ namespace LemonadeStand
         }
         public void DisplayMoney()
         {
-            Console.WriteLine("You have $" + money);
+            Console.WriteLine("You have $" + Math.Round(money,2));
         }
         public static double SetPricePerCup()
         {
             User_Interface.MenuMessage = "In cents, how much per cup will you charge?";
             User_Interface.DisplayMessage();
-            return Convert.ToDouble(Console.ReadLine());
+            return Convert.ToDouble(Console.ReadLine())/100;
         }
 
         public int GetQuality(int numberOfLemons, int numberOfSugar)
